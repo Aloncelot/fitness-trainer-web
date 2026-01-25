@@ -1,0 +1,18 @@
+// 1. Colores (Identidad visual)
+$color-primario: #e63946;    // Un rojo energético
+$color-fondo: #0a0a0a;       // Negro casi total (estilo gym)
+$color-superficie: #1a1a1a;  // Gris oscuro para tarjetas/secciones
+$color-texto: #ffffff;
+$color-texto-suave: #a0a0a0;
+
+// 2. Tipografía
+$fuente-principal: 'Inter', sans-serif; // Next.js la trae por defecto
+
+// 3. Espaciados (Para que todo sea proporcional)
+$espacio-sm: 8px;
+$espacio-md: 16px;
+$espacio-lg: 32px;
+$espacio-xl: 64px;
+
+// 4. Bordes
+$radio-borde: 8px;

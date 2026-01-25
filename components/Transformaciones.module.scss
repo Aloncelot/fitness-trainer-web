@@ -1,0 +1,82 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $espacio-xl $espacio-lg;
+}
+
+.gridTransformaciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $espacio-lg;
+  margin-top: $espacio-xl;
+}
+
+.tarjetaTransformacion {
+  background: $color-fondo;
+  padding: $espacio-md;
+  border-radius: $radio-borde;
+  overflow: hidden;
+
+  .fotos {
+    display: flex;
+    gap: 4px;
+    margin-bottom: $espacio-md;
+
+    div {
+      flex: 1;
+      aspect-ratio: 4 / 5; 
+      position: relative; 
+      overflow: hidden;
+      border-radius: 4px;
+    }
+  }
+
+  h4 {
+    color: $color-primario;
+    margin-bottom: 5px;
+  }
+
+  span {
+    color: $color-texto-suave;
+    font-size: 0.9rem;
+  }
+}
+
+.fotos {
+  div {
+    position: relative;
+
+    &::after {
+      content: 'Antes';
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    &:last-child::after {
+      content: 'Después';
+      background: $color-primario;
+    }
+  }
+}
+
+.contenedorBoton {
+  margin-top: $espacio-xl;
+  display: flex;
+  justify-content: center;
+}
+
+.botonVerMas {
+  @include boton-primario; 
+  text-decoration: none;
+  display: inline-block;
+}

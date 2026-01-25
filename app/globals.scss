@@ -1,0 +1,36 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: $fuente-principal;
+  margin: 0;  
+  min-height: 100vh;
+}
+
+main {
+  max-width: 100%;
+}
+
+h1 {
+  color: $color-primario;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; 
+}
+
+section[id] {
+  scroll-margin-top: 100px; 
+}

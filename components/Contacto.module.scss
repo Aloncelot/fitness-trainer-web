@@ -1,0 +1,103 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionContacto {
+  padding: $espacio-xl $espacio-lg;
+  width: 100%;
+  background-color: $color-fondo;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: $espacio-md;
+  background: $color-superficie;
+  padding: $espacio-lg;
+  border-radius: $radio-borde;
+
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+      font-size: 0.9rem;
+      color: $color-texto-suave;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      background: $color-fondo;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      color: white;
+      font-family: inherit;
+
+      &:focus {
+        outline: none;
+        border-color: $color-primario;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .error {
+      color: #ff4d4d;
+      font-size: 0.8rem;
+    }
+  }
+
+  button {
+    @include boton-primario;
+    margin-top: $espacio-sm;
+  }
+}
+
+.contenedorContacto {
+  max-width: 1200px; 
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; 
+  gap: 80px; 
+  align-items: start;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr; 
+    gap: $espacio-xl;
+  }
+}
+.datosDirectos {
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: $espacio-lg;
+    text-align: left;
+    span { color: $color-primario; }
+  }
+
+  .dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: $espacio-lg;
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 20px;
+    border-radius: $radio-borde;
+    border-left: 3px solid $color-primario;
+
+    h4 {
+      color: $color-primario;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    p {
+      color: white;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
+}

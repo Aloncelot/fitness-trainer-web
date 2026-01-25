@@ -1,0 +1,72 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionOpiniones {
+  padding: $espacio-xl $espacio-lg;
+  background-color: lighten($color-fondo, 2%);
+}
+
+.gridOpiniones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $espacio-lg;
+  max-width: 1200px;
+  margin: $espacio-xl auto 0;
+}
+
+.tarjetaOpinion {
+  @include card-style;
+  display: flex;
+  flex-direction: column;
+  gap: $espacio-sm;
+  
+  .estrellas {
+    color: #f1c40f; 
+    display: flex;
+    gap: 2px;
+  }
+
+  p {
+    font-style: italic;
+    color: white;
+    line-height: 1.6;
+    margin: $espacio-sm 0;
+  }
+
+  .autor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+
+    .avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: $color-primario;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    span {
+      font-weight: 600;
+      color: $color-primario;
+    }
+  }
+}
+
+.contenedorBoton {
+  margin-top: $espacio-xl;
+  display: flex;
+  justify-content: center;
+}
+
+.botonVerMas {
+  @include boton-primario; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 12px 30px;
+}

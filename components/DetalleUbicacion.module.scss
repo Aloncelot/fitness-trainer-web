@@ -1,0 +1,44 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.contenedorDetalles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $espacio-lg;
+  margin-top: $espacio-xl;
+  padding-top: $espacio-xl;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.itemDetalle {
+  text-align: left;
+  padding: $espacio-md;
+  
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: $espacio-md;
+    
+    .icono {
+      color: $color-primario;
+      background: rgba($color-primario, 0.1);
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  p {
+    color: $color-texto-suave;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,54 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionFaqs {
+  padding: $espacio-xl $espacio-lg;
+  max-width: 800px; // Más estrecho que el resto para facilitar la lectura
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $espacio-xl;
+    span { color: $color-primario; }
+  }
+}
+
+.faqItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: $espacio-md;
+}
+
+.pregunta {
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+
+  .icono {
+    transition: transform 0.3s ease;
+    color: $color-primario;
+    
+    &.abierto {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.respuesta {
+  overflow: hidden; // Vital para la animación de altura
+  
+  p {
+    padding-bottom: 20px;
+    color: $color-texto-suave;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+}

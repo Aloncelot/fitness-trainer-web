@@ -1,0 +1,83 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionCasos {
+  padding: $espacio-xl $espacio-lg;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: $espacio-lg;
+    span { color: $color-primario; }
+  }
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: $espacio-md;
+  margin-bottom: $espacio-xl;
+  flex-wrap: wrap;
+
+  button {
+    background: $color-superficie;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.activo {
+      background: $color-primario;
+      border-color: $color-primario;
+    }
+  }
+}
+
+.gridCasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: $espacio-xl;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tarjetaCaso {
+  @include card-style;
+  overflow: hidden;
+
+  .fotos {
+    display: flex;
+    gap: 5px;
+    margin-bottom: $espacio-md;
+    aspect-ratio: 16 / 9;
+    
+    div {
+      flex: 1;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .info {
+    h3 { color: $color-primario; margin-bottom: 5px; }
+    p { color: $color-texto-suave; font-size: 0.9rem; line-height: 1.5; }
+    
+    .detalles {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}

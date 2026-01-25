@@ -1,0 +1,43 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.footer {
+  background-color: $color-fondo;
+  padding: $espacio-xl $espacio-lg;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  @include flex-center(column, $espacio-lg);
+  text-align: center;
+}
+
+.sociales {
+  display: flex;
+  gap: $espacio-lg;
+
+  a {
+    color: $color-texto-suave;
+    transition: color 0.3s, transform 0.3s;
+
+    &:hover {
+      color: $color-primario;
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.info {
+  p {
+    margin: 5px 0;
+    color: $color-texto-suave;
+    font-size: 0.9rem;
+  }
+
+  strong {
+    color: white;
+  }
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #444;
+  margin-top: $espacio-md;
+}

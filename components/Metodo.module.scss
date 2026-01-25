@@ -1,0 +1,36 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionMetodo {
+  padding: $espacio-xl $espacio-lg;
+  background-color: lighten($color-fondo, 3%);
+  text-align: center;
+
+  h2 { font-size: 2.5rem; margin-bottom: $espacio-xl; span { color: $color-primario; } }
+}
+
+.gridMetodo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $espacio-lg;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjetaMetodo {
+  @include card-style;
+  text-align: left;
+  padding: $espacio-lg;
+  
+  h4 {
+    color: $color-primario;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    color: $color-texto-suave;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}

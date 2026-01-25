@@ -1,0 +1,147 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.hero {
+  height: 80vh;
+  @include flex-center(column, $espacio-md);
+  text-align: center;
+  padding: $espacio-lg;
+
+  h1 {
+    font-size: 4rem;
+    color: $color-primario;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $color-texto-suave;
+    max-width: 600px;
+  }
+}
+
+.botonPrincipal {
+  background-color: $color-primario;
+  color: white;
+  padding: 12px 24px;
+  border-radius: $radio-borde;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: $espacio-md;
+}
+
+.heroWrapper {
+  position: relative;
+  height: 100vh; 
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; 
+  z-index: -2;
+  
+  img {
+    object-fit: cover;
+    filter: brightness(0.4) grayscale(0.5);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,
+    rgba($color-fondo, 1) 100%
+  );
+  z-index: -1;
+}
+
+.contenido {
+  text-align: center;
+  z-index: 10;
+  padding: 0 $espacio-lg;
+
+  h1 {
+    font-size: clamp(3rem, 8vw, 6rem); 
+    line-height: 1;
+    margin-bottom: $espacio-md;
+    
+    span {
+      color: $color-primario;
+      display: block; 
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $color-texto-suave;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.contenedorBoton {
+  margin-top: $espacio-lg;
+  position: relative;
+  display: inline-block;
+  padding: 3px; 
+  border-radius: 50px;
+  overflow: hidden; 
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent, 
+      $color-primario, 
+      transparent 30%
+    );
+    animation: rotate 3s linear infinite;
+    z-index: -1;
+  }
+}
+
+.botonHero {
+  background-color: #111; 
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #000;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

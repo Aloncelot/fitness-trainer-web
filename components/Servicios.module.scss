@@ -1,0 +1,41 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionServicios {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $espacio-xl $espacio-lg;
+  
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: $espacio-xl;
+  }
+}
+
+.gridServicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: $espacio-lg;
+}
+
+.tarjeta {
+  @include card-style;
+  text-align: center;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $color-primario;
+  }
+
+  h3 {
+    color: $color-primario;
+    margin-bottom: $espacio-sm;
+  }
+
+  p {
+    color: $color-texto-suave;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,88 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionTienda {
+  padding: $espacio-xl $espacio-lg;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    margin-bottom: $espacio-lg;
+    span { color: $color-primario; }
+  }
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: $espacio-xl;
+  flex-wrap: wrap;
+
+  button {
+    background: $color-superficie;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &.activo {
+      background: $color-primario;
+      border-color: $color-primario;
+    }
+  }
+}
+
+.gridProductos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $espacio-lg;
+}
+
+.tarjetaProducto {
+  @include card-style;
+  padding: 0; // Para que la imagen llegue a los bordes si queremos
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .contenedorImagen {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    background: #fff; // Fondo blanco para que los botes de suplementos resalten
+
+    img {
+      transition: transform 0.5s ease;
+      object-fit: contain;
+      padding: 20px;
+    }
+  }
+
+  &:hover {
+    .contenedorImagen img {
+      transform: scale(1.1); // El efecto de zoom que pediste
+    }
+  }
+
+  .info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    small { color: $color-primario; font-weight: bold; font-size: 0.7rem; text-transform: uppercase; }
+    h3 { font-size: 1.2rem; margin: 5px 0; }
+    .precio { font-size: 1.4rem; font-weight: bold; margin: 10px 0; }
+  }
+
+  button {
+    @include boton-primario;
+    border-radius: 0; // Botón cuadrado al fondo de la tarjeta
+    width: 100%;
+  }
+}

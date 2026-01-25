@@ -1,0 +1,92 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionPreview {
+  padding: $espacio-xl 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $color-fondo;
+}
+
+.bannerLink {
+  width: 70%;
+  max-width: 1200px;
+  aspect-ratio: 3 / 1;
+  position: relative;
+  border-radius: $radio-borde;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 50px rgba($color-primario, 0.2);
+    
+    .overlay {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0) 85%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 92%; 
+    aspect-ratio: 1.5 / 1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  transition: background 0.3s ease;
+}
+
+.contenido {
+  color: white;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    
+    span { color: $color-primario; }
+
+    @media (max-width: 768px) { font-size: 1.8rem; }
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+
+    @media (max-width: 768px) { font-size: 0.9rem; }
+  }
+}
+
+.fakeBtn {
+  display: inline-block;
+  color: white;
+  border-bottom: 2px solid $color-primario;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,39 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionProceso {
+  padding: $espacio-xl $espacio-lg;
+  text-align: center;
+  background-color: $color-fondo;
+}
+
+.gridPasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $espacio-lg;
+  max-width: 1000px;
+  margin: $espacio-xl auto 0;
+  position: relative;
+}
+
+.paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  .numero {
+    width: 50px;
+    height: 50px;
+    background-color: $color-primario;
+    color: white;
+    border-radius: 50%;
+    @include flex-center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba($color-primario, 0.4);
+  }
+
+  h4 { color: white; margin-top: 10px; }
+  p { color: $color-texto-suave; font-size: 0.9rem; line-height: 1.4; }
+}

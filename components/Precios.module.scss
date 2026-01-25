@@ -1,0 +1,69 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionPrecios {
+  padding: $espacio-xl $espacio-lg;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenedorTabla {
+  overflow-x: auto; // Crucial para móviles
+  margin-top: $espacio-xl;
+  background: $color-superficie;
+  border-radius: $radio-borde;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tabla {
+  min-width: 800px; // Evita que se colapse en pantallas chicas
+  display: grid;
+  // 1 columna para el nombre del plan + 3 para ubicaciones
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+}
+
+.encabezado, .fila {
+  display: contents; // Permite que los hijos sigan el grid del padre
+}
+
+.celda {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &.nombrePlan {
+    justify-content: flex-start;
+    text-align: left;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &.headerCol {
+    background: $color-primario;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+}
+
+.precio {
+  font-weight: bold;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  
+  span {
+    font-size: 0.7rem;
+    color: $color-texto-suave;
+    font-weight: normal;
+  }
+
+  &.noDisponible {
+    color: #444;
+    text-decoration: line-through;
+  }
+}
