@@ -1,0 +1,104 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.seccionForm {
+  padding: $espacio-xl $espacio-lg;
+  max-width: 700px;
+  margin: 0 auto;
+  @include card-style; // Usando tu mixin de tarjetas
+  
+  h3 {
+    text-align: center;
+    margin-bottom: $espacio-md;
+    span { color: $color-primario; }
+  }
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  input, textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    
+    &:focus {
+      outline: none;
+      border-color: $color-primario;
+    }
+  }
+
+  textarea { min-height: 120px; resize: vertical; }
+}
+
+.estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #444;
+    transition: transform 0.2s;
+    
+    &.activa { color: #ffb703; } // Color dorado para estrellas
+    &:hover { transform: scale(1.2); }
+  }
+}
+
+.botonEnviar {
+  @include boton-primario;
+  margin-top: 10px;
+}
+
+.contenedorModalidad {
+  margin-bottom: 5px;
+  
+  p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+  }
+}
+
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  .pill {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.pillActiva {
+      background: $color-primario;
+      border-color: $color-primario;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba($color-primario, 0.3);
+    }
+  }
+}
+
+.botonEnviar {
+  @include boton-primario;
+  margin-top: 10px;
+}

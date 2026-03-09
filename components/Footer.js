@@ -1,5 +1,6 @@
 "use client";
-import { Instagram, Facebook, MessageCircle, Twitter } from "lucide-react";
+import { Instagram, Facebook, MessageCircle, Twitter, Lock, Terminal } from "lucide-react";
+import Link from "next/link";
 import styles from "./Footer.module.scss";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.info}>
-        <h3>Coach <span style={{ color: "#ff0000" }}>Diego</span> Fitness</h3>
+        <h3>Coach <span style={{ color: "#e63946" }}>Diego</span> Fitness</h3>
         <p>Entrenamiento de élite para resultados reales.</p>
       </div>
 
@@ -22,13 +23,29 @@ export default function Footer() {
         <a href="#" aria-label="WhatsApp">
           <MessageCircle size={24} />
         </a>
-        <a href="#" aria-label="Twitter">
-          <Twitter size={24} />
-        </a>
+        
       </div>
 
-      <div className={styles.copyright}>
-        © {anioActual} Todos los derechos reservados. Creado por Alonso Correa.
+      {/* Nueva barra inferior estilo Quasar Devs */}
+      <div className={styles.barraInferior}>
+        <div className={styles.copyright}>
+          © {anioActual} Coach Diego Fitness. Todos los derechos reservados.
+        </div>
+        
+        <div className={styles.creditos}>
+          <a 
+            href="https://quasar-devs.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={styles.enlaceQuasar}
+          >
+            <Terminal size={14} /> Built by QUASAR DEVS
+          </a>
+          
+          <Link href="/admin/testimonios" className={styles.enlaceAdmin}>
+            <Lock size={14} /> Admin
+          </Link>
+        </div>
       </div>
     </footer>
   );

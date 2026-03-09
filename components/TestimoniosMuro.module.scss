@@ -92,4 +92,56 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+
+  .container-volver {
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+  }
+}
+
+// ... mantén todo tu código anterior intacto hasta aquí
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+
+  button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: rgba($color-primario, 0.2);
+      border-color: $color-primario;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  .botonNumero {
+    font-size: 1rem;
+    font-weight: bold;
+
+    &.activo {
+      background: $color-primario;
+      border-color: $color-primario;
+      color: white;
+      box-shadow: 0 4px 10px rgba($color-primario, 0.3);
+    }
+  }
 }

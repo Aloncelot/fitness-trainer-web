@@ -20,6 +20,7 @@ export default function PaginaCasos() {
     </Link>
     </div>
       <CasosExito />
+
     </main>
   );
 }

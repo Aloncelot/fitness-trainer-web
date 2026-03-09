@@ -1,6 +1,9 @@
+//app/testimonios/page.js
+
 import TestimoniosMuro from "../../components/TestimoniosMuro";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import NuevoTestimonio from "@/components/NuevoTestimonio";
 
 export default function PaginaTestimonios() {
   return (
@@ -21,6 +24,9 @@ export default function PaginaTestimonios() {
     </Link>
     </div>
       <TestimoniosMuro />
+      <div style={{ marginTop: '60px', marginBottom: '60px' }}>
+        <NuevoTestimonio />
+      </div>
     </main>
   );
 }
