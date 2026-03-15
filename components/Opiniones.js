@@ -14,8 +14,13 @@ export default function Opiniones() {
       try {
         const res = await fetch('/api/testimonios');
         const data = await res.json();
-        // just the last 3 testimonies in the home page
-        setOpiniones(data.slice(0, 3)); 
+        
+        if (Array.isArray(data)) {
+            setOpiniones(data.slice(0, 3)); 
+        } else {
+            console.error("La API no devolvió un arreglo. Recibimos:", data);
+          }
+
       } catch (error) {
         console.error("Error al cargar testimonios:", error);
       } finally {
